@@ -4,7 +4,7 @@
 // We need more execetion time
 set_time_limit(600);
 
-define('PRODUCTS_COUNT', 250);
+define('PRODUCTS_COUNT', 500);
 define('VERBOSE', false);
 
 require $_SERVER['DOCUMENT_ROOT'] . '/wp-blog-header.php';
@@ -52,7 +52,7 @@ $postData = [
 // Create 1000 products
 for ($i = 1; $i <= PRODUCTS_COUNT ; $i++) { 
 
-	$postData['post_title'] = 'Товар #' . $i;
+	$postData['post_title'] = 'Товар ' . uniqid();
 
 	// Create product and get its ID
 	$post_id = wp_insert_post(wp_slash($postData));
